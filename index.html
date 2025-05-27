@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Counseling Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Basic styles for responsive social icons - CONSIDER MOVING TO style.css */
+        .social-share a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #333; /* Default icon color */
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .social-share a:hover {
+            opacity: 0.8;
+        }
+        .social-share .fa-instagram { color: #E4405F; }
+        .social-share .fa-facebook { color: #3b5998; }
+        .social-share .fa-linkedin { color: #0077B5; }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <header>
+            <img src="your-logo.png" alt="Your Brand Logo" class="logo">
+            <h1>Unlock Your Potential with Career Compass</h1>
+        </header>
+
+        <section class="description">
+            <p>Are you feeling a bit lost in the career jungle? Or perhaps you're ready to climb to the next peak? At **Career Compass**, we provide personalized guidance, expert insights, and actionable strategies to help you navigate your professional journey and achieve your aspirations. Whether you're just starting out, looking for a change, or aiming for leadership, we're here to be your guide. Sign up today and let's chart your path to success!</p>
+        </section>
+
+        <section class="signup-form">
+            <h2>Join Our Journey!</h2>
+            <p>Enter your email below to get exclusive updates and early access to our services.</p>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    <small id="emailError" class="error-message"></small>
+                </div>
+                <button type="submit">Sign Me Up!</button>
+            </form>
+            <div id="confirmationMessage" class="hidden">
+                <p>🚀 Awesome! Your journey with Career Compass has begun. We've received your email!</p>
+                <p>Want to share your excitement? Spread the word!</p>
+                <div class="social-share">
+                    <a href="#" id="shareInstagram" target="_blank" title="Share on Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" id="shareFacebook" target="_blank" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" id="shareLinkedIn" target="_blank" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="visitor-counter">
+            <p>Visitors: <span id="visitorCount">Loading...</span></p>
+        </section>
+    </div> <script src="script.js"></script> 
+</body>
+</html>

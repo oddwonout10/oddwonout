@@ -209,19 +209,17 @@ button[type="submit"]:active {
     color: var(--dark-blue-text); /* Change color on hover */
 }
 
-/* Specific social media colors for better branding */
-.social-share a.facebook-icon { color: #3b5998; }
-.social-share a.linkedin-icon { color: #0077b5; }
-.social-share a.instagram-icon { color: #E1306C; }
-
 /* Subtle hover effects for specific social icons */
 .social-share a.facebook-icon:hover { color: #2d4373; }
 .social-share a.linkedin-icon:hover { color: #005f8b; }
 .social-share a.instagram-icon:hover {
     /* Slightly darker gradient on hover */
     background: -webkit-linear-gradient(45deg, #cc7a29, #c05830, #b02138, #a51c5b, #931370);
+    background: linear-gradient(45deg, #cc7a29, #c05830, #b02138, #a51c5b, #931370);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* Keep this line */
+    /* REMOVED: text-fill-color: transparent; <-- This was causing the "Unknown property" error */
     transform: scale(1.2) translateY(-2px); /* Lift and zoom */
 }
 

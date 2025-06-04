@@ -126,5 +126,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // LinkedIn Share
         shareLinkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareURL}&summary=${encodedMessage}&title=${encodeURIComponent('Career Compass - Unlock Your Potential!')}`;
+        // Update the confirmation message text
+        const confirmationTextElement = confirmationMessage.querySelector('p:first-of-type');
+        if (confirmationTextElement) {
+            confirmationTextElement.innerHTML = `🚀 Awesome! Your journey with OddWonOut has begun. We've received your email and sent a confirmation to your inbox!`;
+        }
+
+        // --- Social Sharing Setup ---
+        // The URL of your live Odd Won Out signup page (will be dynamically pulled by window.location.href)
+        const shareURL = encodeURIComponent(window.location.href);
+
+        // The pre-filled message you want to share
+        const prefilledShareMessage = "Just signed up for OddWonOut (OWO)! Excited to uncover true potential in academics and career. Join me!";
+        const encodedShareMessage = encodeURIComponent(prefilledShareMessage);
+
+        // Hashtags for Facebook/Twitter (can be modified)
+        const facebookHashtag = encodeURIComponent("#OddWonOut #OWO #CareerGuidance #StudentSuccess");
+
+
+        // 1. Instagram Share (still requires manual copy-paste for text)
+        // Instagram's sharing APIs are primarily for sharing media, not pre-filling text posts.
+        // We'll give the user a prompt to copy the text.
+        shareInstagram.href = `https://www.instagram.com/direct/inbox/`; // Or link to your Insta profile if preferred
+        shareInstagram.onclick = () => {
+             alert(`For Instagram, you'll usually copy the message and paste it into your post/story after uploading an image!\n\nMessage: ${prefilledShareMessage}\n\nLink: ${decodeURIComponent(shareURL)}`);
+             return false; // Prevents navigation if alert is shown
+        };
+
+        // 2. Facebook Share Dialog
+        // Uses the sharer.php endpoint which supports 'u' (URL) and 'quote' (pre-filled text)
+        shareFacebook.href = `https://www.facebook.com/sharer/sharer.php?u=${shareURL}&quote=${encodedShareMessage}&hashtag=${facebookHashtag}`;
+
+        // 3. LinkedIn Share
+        // Uses the share-offsite endpoint. 'url' is your page link, 'summary' is the pre-filled text.
+        shareLinkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareURL}&summary=${encodedShareMessage}&title=${encodeURIComponent('Odd Won Out (OWO) - Uncover Your Potential!')}`;
+        // You can also add a 'source' parameter if you want to identify your app/site as the source of the share.
     }
 });

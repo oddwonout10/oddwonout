@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update the confirmation message text
         const confirmationTextElement = confirmationMessage.querySelector('p:first-of-type');
         if (confirmationTextElement) {
-            confirmationTextElement.innerHTML = `🚀 Awesome! Your journey with Odd Won Out has begun. We've received your email and sent a confirmation to your inbox!`;
+            confirmationTextElement.innerHTML = `🚀 Awesome! Your journey with OddWonOut has begun. We've received your email and sent a confirmation to your inbox!`;
         }
 
         // Initialize social share buttons after confirmation message is visible
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const shareURL = encodeURIComponent(window.location.href);
 
         // The pre-filled message you want to share
-        const prefilledShareMessage = "Just signed up for Odd Won Out (OWO)! Excited to uncover true potential in academics and career. Join me!";
+        const prefilledShareMessage = "Just signed up for OddWonOut (OWO)! Excited to uncover true potential in academics and career. Join me!";
         const encodedShareMessage = encodeURIComponent(prefilledShareMessage);
 
         // Hashtags for Facebook (can be modified)

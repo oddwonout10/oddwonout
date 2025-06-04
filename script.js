@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                if (data && typeof data.visits === 'number') {
-                    visitorCountElement.textContent = data.visits;
+                if (data && typeof data.count === 'number') {
+                    visitorCountElement.textContent = data.count;
                 } else {
                     visitorCountElement.textContent = 'N/A';
                     console.error('Invalid visitor count data received:', data);

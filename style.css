@@ -1,121 +1,188 @@
-CSS
+/* Import Google Fonts for a more modern feel */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* CSS Variables for a clean and consistent color palette */
+:root {
+    --primary-blue: #3498db; /* A vibrant blue for accents and buttons */
+    --dark-blue-text: #2c3e50; /* Deep blue-grey for main headings */
+    --light-text: #555; /* Soft grey for body text */
+    --background-light-grey: #f8f9fa; /* Very light grey background */
+    --container-bg: #ffffff; /* White background for the main content box */
+    --border-light: #e0e0e0; /* Light border color */
+    --success-green: #2ecc71; /* Green for success messages */
+    --error-red: #e74c3c; /* Red for error messages */
+    --shadow-base: rgba(0, 0, 0, 0.1); /* Standard shadow */
+    --shadow-hover: rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Modern, readable sans-serif */
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6; /* Light background */
-    color: #333;
+    background-color: var(--background-light-grey);
+    color: var(--light-text);
+    /* Option 1: Center vertically and horizontally (current setup) */
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: center; /* This centers vertically */
+    min-height: 100vh; /* Ensures body takes full viewport height */
+
+    /* Option 2: Align content to the top, centered horizontally (more common for landing pages) */
+    /* If you prefer content starts at the top, comment out align-items and min-height above, and uncomment these: */
+    /* display: block; */
+    /* padding-top: 50px; /* Adjust as needed to push content down from the very top */
+    /* align-items: flex-start; /* This is the default, so not strictly needed */
 }
 
 .container {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 600px;
+    background-color: var(--container-bg);
+    padding: 50px; /* Increased padding for more breathing room */
+    border-radius: 15px; /* More rounded corners for a softer look */
+    box-shadow: 0 12px 35px var(--shadow-base); /* Deeper, softer shadow */
+    text-align: center; /* Keeps internal content like headings centered */
+    max-width: 650px; /* Slightly wider container for desktop */
     width: 90%;
-    box-sizing: border-box; /* Include padding in element's total width and height */
+    box-sizing: border-box;
+    position: relative; /* For visitor count positioning */
+    margin: 20px auto; /* Add margin-top/bottom just in case, and auto for horizontal centering */
 }
 
+/* Visitor Count Container - Position it strategically */
+.visitor-count-container {
+    position: absolute;
+    top: 20px; /* Adjust vertical position */
+    right: 25px; /* Adjust horizontal position */
+    font-size: 0.9em;
+    color: var(--light-text);
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle background */
+    padding: 5px 10px;
+    border-radius: 8px;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+
 header {
-    margin-bottom: 30px;
+    margin-bottom: 40px; /* More space below header content */
 }
 
 .logo {
-    max-width: 150px;
+    max-width: 180px; /* Larger logo for more presence */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* More space below logo */
+    border-radius: 50%; /* Make logo round */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Subtle shadow for logo */
 }
 
 h1 {
-    color: #2c3e50; /* Darker blue/grey */
-    font-size: 2.2em;
+    font-family: 'Playfair Display', serif; /* Elegant serif font for main title */
+    color: var(--dark-blue-text);
+    font-size: 2.8em; /* Larger main title */
     margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 h2 {
-    color: #34495e; /* Slightly lighter than h1 */
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    color: var(--primary-blue); /* Section headings in primary blue */
+    font-size: 2.2em; /* Larger section heading */
+    margin-bottom: 25px;
+    line-height: 1.3;
 }
 
 .description p {
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-size: 1.15em; /* Slightly larger and more readable text */
+    line-height: 1.7; /* Increased line height for better readability */
     margin-bottom: 30px;
-    color: #555;
+    color: var(--light-text);
+    text-align: left; /* Ensure paragraphs are left-aligned */
+}
+
+/* Founder's Signature */
+.description p:last-of-type {
+    margin-top: 40px; /* More space above signature */
+    text-align: right; /* Keep this right-aligned as a signature */
+    font-style: italic;
+    font-size: 1em; /* Standard size for signature */
+    color: var(--light-text);
 }
 
 .signup-form {
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+    padding-top: 30px; /* More padding above the form */
+    border-top: 1px solid var(--border-light); /* Lighter, subtle border */
+    margin-top: 30px; /* Space between description and form */
 }
 
 .form-group {
-    margin-bottom: 20px;
-    text-align: left;
+    margin-bottom: 25px; /* More space between form elements */
+    text-align: left; /* Keep labels and input left-aligned within the group */
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px; /* More space between label and input */
     font-weight: bold;
-    color: #444;
+    color: var(--dark-blue-text); /* Labels in darker text */
+    font-size: 1.05em;
 }
 
 .form-group input[type="email"] {
-    width: calc(100% - 20px);
-    padding: 12px 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1em;
+    width: calc(100% - 24px); /* Adjust width for padding/border */
+    padding: 14px 12px; /* More padding inside input */
+    border: 1px solid var(--border-light);
+    border-radius: 10px; /* More rounded input corners */
+    font-size: 1.1em;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Subtle inner shadow */
 }
 
 .form-group input[type="email"]:focus {
-    border-color: #3498db; /* Blue focus */
+    border-color: var(--primary-blue);
     outline: none;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25); /* More prominent focus glow */
 }
 
 button[type="submit"] {
-    background-color: #27ae60; /* Green submit button */
+    background-color: var(--success-green); /* Green submit button */
     color: white;
-    padding: 14px 25px;
+    padding: 16px 30px; /* Larger button padding */
     border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
+    border-radius: 10px; /* More rounded button */
+    font-size: 1.2em; /* Larger button text */
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     width: 100%;
     box-sizing: border-box;
+    font-weight: 700; /* Bolder button text */
+    box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3); /* Green shadow */
 }
 
 button[type="submit"]:hover {
-    background-color: #2ecc71; /* Lighter green on hover */
-    transform: translateY(-2px);
+    background-color: #27ae60; /* Slightly darker green on hover */
+    transform: translateY(-3px); /* More pronounced lift */
+    box-shadow: 0 8px 16px rgba(46, 204, 113, 0.4); /* Stronger shadow on hover */
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(46, 204, 113, 0.3);
 }
 
 .error-message {
-    color: #e74c3c; /* Red for errors */
-    font-size: 0.9em;
-    margin-top: 5px;
-    display: block; /* Ensures it takes its own line */
+    color: var(--error-red);
+    font-size: 0.95em; /* Slightly larger error text */
+    margin-top: 8px; /* More space above error message */
+    display: block;
+    text-align: left; /* Ensure error messages align with the input */
 }
 
 #confirmationMessage {
-    background-color: #e8f8f5; /* Light green success background */
-    border: 1px solid #d0f0e0;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 30px;
-    color: #28a745; /* Green text */
+    background-color: #d4edda; /* Light green success background, more vibrant */
+    border: 1px solid var(--success-green);
+    padding: 25px; /* More padding */
+    border-radius: 10px;
+    margin-top: 35px; /* More space above confirmation */
+    color: #155724; /* Darker green text */
+    font-weight: 500;
 }
 
 #confirmationMessage p {
@@ -124,19 +191,116 @@ button[type="submit"]:hover {
 }
 
 .social-share {
-    margin-top: 20px;
+    margin-top: 40px; /* More space above social share */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 25px; /* Increased spacing between icons */
 }
 
 .social-share a {
-    margin: 0 15px; /* Adjust spacing */
-    font-size: 30px; /* Make icons a bit larger */
-    transition: transform 0.2s ease;
+    font-size: 38px; /* Larger icons */
+    color: var(--primary-blue); /* Default icon color */
+    transition: transform 0.2s ease, color 0.3s ease;
 }
 
 .social-share a:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+    transform: scale(1.2); /* More pronounced zoom on hover */
+    color: var(--dark-blue-text); /* Change color on hover */
+}
+
+/* Specific social media colors for better branding */
+.social-share a.facebook-icon { color: #3b5998; }
+.social-share a.linkedin-icon { color: #0077b5; }
+.social-share a.instagram-icon { color: #E1306C; }
+
+/* Subtle hover effects for specific social icons */
+.social-share a.facebook-icon:hover { color: #2d4373; }
+.social-share a.linkedin-icon:hover { color: #005f8b; }
+.social-share a.instagram-icon:hover {
+    /* Slightly darker gradient on hover */
+    background: -webkit-linear-gradient(45deg, #cc7a29, #c05830, #b02138, #a51c5b, #931370);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.2) translateY(-2px); /* Lift and zoom */
 }
 
 .hidden {
     display: none;
+}
+
+/* === Mobile Responsiveness === */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px; /* Less padding on smaller screens */
+        border-radius: 10px;
+        box-shadow: 0 8px 25px var(--shadow-base);
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .description p {
+        font-size: 1.05em;
+    }
+
+    .logo {
+        max-width: 120px; /* Smaller logo on mobile */
+    }
+
+    /* Visitor Count for mobile */
+    .visitor-count-container {
+        top: 15px;
+        right: 15px;
+        font-size: 0.8em;
+        padding: 3px 8px;
+    }
+
+    .social-share {
+        gap: 15px; /* Reduce gap on mobile */
+        margin-top: 30px;
+    }
+
+    .social-share a {
+        font-size: 30px; /* Adjust icon size for mobile */
+    }
+
+    button[type="submit"] {
+        padding: 12px 20px; /* Smaller button padding on mobile */
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px; /* Even less padding on very small screens */
+        width: 95%; /* Wider container on very small screens */
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    .description p {
+        font-size: 1em;
+    }
+
+    .social-share {
+        flex-direction: column; /* Stack social icons vertically */
+        align-items: center;
+        gap: 10px;
+    }
+    .social-share a {
+        min-width: 100%; /* Ensure stacked icons take full width */
+        padding: 8px 0; /* Add vertical padding for touch */
+    }
 }

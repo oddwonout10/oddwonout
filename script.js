@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 3. LinkedIn Share
         // Uses the share-offsite endpoint. 'url' is your page link, 'summary' is the pre-filled text.
-        shareLinkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareURL}&summary=${encodedShareMessage}&title=${encodeURIComponent('Odd Won Out (OWO) - Uncover Your Potential!')}`;
+        shareLinkedIn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareURL}&summary=${encodedShareMessage}&title=${encodeURIComponent('OddWonOut (OWO) - Uncover Your Potential!')}`;
         // You can also add a 'source' parameter if you want to identify your app/site as the source of the share.
     }
 });

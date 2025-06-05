@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update the confirmation message text
         const confirmationTextElement = confirmationMessage.querySelector('p:first-of-type');
         if (confirmationTextElement) {
-            confirmationTextElement.innerHTML = `🚀 Awesome! Your journey with OddWonOut has begun. We've received your email and sent a confirmation to your inbox!`;
+            confirmationTextElement.innerHTML = `🚀 Awesome! Your journey with OddWonOut has begun. We have registered your email id with us and sent a confirmation to your inbox!`;
         }
 
         // Initialize social share buttons after confirmation message is visible

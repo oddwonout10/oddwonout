@@ -35,6 +35,12 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1358163228813129');
 fbq('track', 'PageView');
 </script>
+<script>
+  document.getElementById('signup-btn').addEventListener('click', function() {
+    fbq('track', 'Lead');
+  });
+</script>
+
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1358163228813129&ev=PageView&noscript=1"
 /></noscript>
@@ -69,7 +75,7 @@ src="https://www.facebook.com/tr?id=1358163228813129&ev=PageView&noscript=1"
                     <input type="email" id="email" name="email" placeholder="you@example.com" required>
                     <small id="emailError" class="error-message"></small>
                 </div>
-                <button type="submit">Sign Me Up!</button>
+                <button type="submit" id="signup-btn">Sign Me Up!</button>
             </form>
             <div id="confirmationMessage" class="hidden">
                 <p>🚀 Awesome! Your journey with OddWonOut has begun. We have registered your email id with us and sent a confirmation to your inbox!</p>

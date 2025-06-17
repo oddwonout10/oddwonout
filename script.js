@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded' // Or 'application/json' if your Apps Script is parsing as JSON
             },
-            body: JSON.stringify(formData) // Sending as JSON for Apps Script to parse
+            body: new URLSearchParams(formData).toString() // Correctly format the body for URL-encoded data
         })
         .then(response => {
             // Because of 'no-cors', response.ok will always be false.
